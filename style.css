@@ -1,0 +1,196 @@
+:root {
+  --blue: #060ce9;
+  --yellow: #ffcc00;
+  --green: #90ff7e;
+  --red: #d63b3b;
+  --text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background: linear-gradient(180deg, #afafc8 0%, #2b2b38 100%);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-shadow: var(--text-shadow);
+}
+
+#score {
+  display: flex;
+  align-items: center;
+}
+
+.score-count {
+  color: var(--yellow);
+  font-size: 2rem;
+  font-weight: bold;
+  border: #90ff7e;
+  margin: 0.2rem;
+}
+
+.prompt {
+  opacity: 0;
+  /*The pointer-events property defines whether or not an element reacts to pointer events.*/
+  pointer-events: none;
+  /*transition: property(name of the CSS property) duration(how many secs or millsecs the transition takes to complete) timing-function (speed curve of the transition effect) delay(when the transition occurs)|initial|inherit;*/
+  transition: opacity 0.4s;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--blue);
+  position: fixed;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prompt.visible {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.prompt.showing-result .result {
+  display: block;
+}
+
+.prompt .clue-text {
+  margin-bottom: 2rem;
+}
+
+.result,
+.prompt.showing-result form {
+  display: none;
+}
+
+.prompt form {
+  display: flex;
+}
+
+.prompt form input[type="text"] {
+  display: block;
+  flex-grow: 1;
+  height: 3rem;
+  line-height: 3rem;
+  border: 0;
+  text-align: center;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+}
+.prompt form button[type="submit"] {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 3rem;
+  cursor: pointer;
+  font-family: inherit;
+  background: var(--yellow);
+  border: 0;
+  font-size: inherit;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+
+.prompt-inner {
+  width: 60%;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.result_success,
+.result_fail {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.result_success {
+  color: var(--green);
+}
+
+.result_fail {
+  color: var(--red);
+}
+
+.result_correct-answer-text {
+  font-weight: bold;
+  font-size: 2rem;
+  display: block;
+  margin-left: 0.1rem;
+}
+
+.hidden-1,
+.hidden-2,
+.hidden-3 {
+  display: none;
+}
+
+button {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.board {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  margin: 10px auto;
+}
+
+div .used {
+  font-size: 0;
+}
+
+#category-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#clue-board {
+  flex-direction: column;
+}
+
+.clue-row {
+  display: flex;
+}
+
+.clue-box {
+  display: flex;
+  align-items: center; /*vertical*/
+  justify-content: center; /*horizontal*/
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: var(--blue);
+  color: var(--yellow);
+  margin: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 100px;
+  flex: 1;
+  text-transform: uppercase;
+}
+
+.category-box {
+  font-size: 0.8rem;
+  line-height: 25px;
+}
+
+.clicked-box {
+  font-size: 1rem;
+}

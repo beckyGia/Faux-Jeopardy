@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Jeopard-ish</title>
+</head>
+<body>
+  <header class="top-header">
+    <h1>Jeopard-ish!</h1>
+    <div class="multiple-score">
+      <p id="score">Score <span class="score-count">0</span></p>
+    </div>
+
+    <!--Menu To Select Amount of Teams-->
+    <div id="options" class="hidden-3">
+      <div id="outer-menu">
+        <h2>How Many Teams?</h2>
+        <div id="inner-menu">
+          <select id="team-chooser">
+            <option value="1">1 team</option>
+            <option value="2">2 teams</option>
+            <option value="3">3 teams</option>
+          </select>
+          <input type="button" class="submit" id="submit" value="Start">
+        </div>
+
+
+      </div>
+    </div>
+  </header>
+  <!-- Container for the board -->
+  <div class="board">
+    <div id="category-row"></div>
+    <div id="clue-board"></div>
+  </div>
+  <button type="button" id="start-game">Start New Game</button>
+
+
+  <!-- invisible container for the card prompt-->
+  <div class="prompt">
+    <div class="prompt-inner">
+      <h2 class="clue-text">
+        <!-- clue gets injected in here-->
+      </h2>
+      <form>
+        <input name="user-answer" type="text">
+        <button type="submit">Answer</button>
+      </form>
+      <div class="result">
+        <p class="result_success">CORRECT</p>
+        <p class="result_fail">INCORRECT</p>
+        <p class="result_correct-answer">The correct answer is: <span class="result_correct-answer-text"><!--answer gets injected here--></span></p>
+        <p class="value hidden-3">The amount is: <span class="value-amount"></span></p>
+
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
